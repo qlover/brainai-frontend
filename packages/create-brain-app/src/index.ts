@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Command, OptionValues } from 'commander';
 import pkg from '../package.json';
 import { dirname, resolve } from 'node:path';
