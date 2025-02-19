@@ -1,6 +1,8 @@
 {
   "protectedBranches": ["main", "develop"],
   "release": {
-    "packagesDirectories": []
+    "packagesDirectories": [
+      "packages/create-brain-app"
+    ]
   }
 }

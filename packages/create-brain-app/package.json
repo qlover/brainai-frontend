@@ -1,29 +1,18 @@
 {
-  "name": "@brain/create-brain-app",
-  "description": "A node lib template",
+  "name": "create-brain-app",
+  "description": "A create-app tool for brainai",
   "version": "0.0.0",
   "type": "module",
   "private": true,
-  "homepage": "",
+  "homepage": "https://github.com/qlover/brainai-frontend#readme",
   "author": "qlover",
   "license": "ISC",
-  "main": "./dist/es/index.js",
-  "module": "./dist/es/index.js",
-  "types": "./dist/es/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/es/index.d.ts",
-      "import": "./dist/es/index.js",
-      "require": "./dist/cjs/index.js"
-    },
-    "./cjs/*": "./dist/cjs/*",
-    "./es/*": "./dist/es/*",
-    "./package.json": "./package.json"
-  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qlover/fe-base.git",
-    "directory": ""
+    "url": "git+https://github.com/qlover/brainai-frontend.git",
+    "directory": "packages/create-brain-app"
   },
   "files": [
     "dist",
@@ -32,8 +21,9 @@
     "README.md"
   ],
   "keywords": [
-    "lib",
-    "node lib"
+    "create-app",
+    "brainai",
+    "create-brain-app"
   ],
   "publishConfig": {
     "access": "public"
@@ -43,13 +33,10 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "lint": "eslint .",
-    "test": "vitest run",
-    "run:command": "node bin/test.js"
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@qlover/env-loader": "latest",
-    "@qlover/fe-standard": "latest",
     "@release-it/conventional-changelog": "^8.0.1",
     "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-json": "^6.1.0",
