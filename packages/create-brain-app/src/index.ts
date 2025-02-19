@@ -33,7 +33,9 @@ const PROMPTS = {
       name: 'projectName',
       message: 'Create Project Name?',
       validate: (value) => {
-        const invalidChars = /[<>:"/\\|?*\x00-\x1F!@#$%^&*()+=\[\]{};':"\\|,.<>\/?~]/;
+        const invalidChars =
+          // eslint-disable-next-line
+          /[<>:"/\\|?*\x00-\x1F!@#$%^&*()+=\[\]{};':"\\|,.<>\/?~]/;
         if (invalidChars.test(value)) {
           return 'Name contains invalid characters for a directory';
         }

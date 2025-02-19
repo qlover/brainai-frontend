@@ -108,9 +108,9 @@ export default [
       // 禁用export default
       'import/no-default-export': 'error',
       // 禁用 import/no-unresolved 检查
-      "import/no-unresolved": "off",
+      'import/no-unresolved': 'off',
       // 禁用 import/named 检查
-      "import/named": "off"
+      'import/named': 'off'
     }
   },
   {
