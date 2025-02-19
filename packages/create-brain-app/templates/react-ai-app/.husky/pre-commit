@@ -1,0 +1,5 @@
+# !/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# 你可以在这里添加其他命令
+pnpm lint-staged

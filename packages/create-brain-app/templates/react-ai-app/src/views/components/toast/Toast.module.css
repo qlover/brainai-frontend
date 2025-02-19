@@ -1,0 +1,46 @@
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.success {
+  background-color: #4CAF50;
+}
+
+.error {
+  background-color: #ff4d4f;
+}
+
+.message {
+  margin-right: 8px;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

@@ -1,4 +1,4 @@
-name: Release brainai-frontend
+name: Release packages/create-brain-app
 
 on:
   workflow_dispatch:
@@ -8,14 +8,13 @@ on:
     types:
       - closed
     paths:
-      - src/**
-
+      - packages/create-brain-app/**
 jobs:
   release-PR:
-    # only run when PR merged and has changes:brainai-frontend and CI-Release labels
+    # only run when PR merged and has changes:packages/create-brain-app and CI-Release labels
     if: |
       github.event.pull_request.merged == true && 
-      contains(github.event.pull_request.labels.*.name, 'changes:brainai-frontend') &&
+      contains(github.event.pull_request.labels.*.name, 'changes:packages/create-brain-app') &&
       !contains(github.event.pull_request.labels.*.name, 'CI-Release')
     runs-on: ubuntu-latest
 
@@ -40,6 +39,9 @@ jobs:
           npm install -g pnpm
           pnpm -v
 
+      - name: Pnpm Install
+        run: pnpm install
+
       - name: Pnpm Lint
         run: pnpm lint
 
@@ -50,17 +52,17 @@ jobs:
         run: pnpm build
 
       - name: Create release PR
-        run: npm run release-pr:create-brain-app
+        run: npm run release-pr:packages/create-brain-app
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN}}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN}}
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }} 
 
   release:
-    # only run when PR merged and has changes:brainai-frontend and CI-Release labels
+    # only run when PR merged and has changes:packages/create-brain-app and CI-Release labels
     if: |
       github.event.pull_request.merged == true && 
-      contains(github.event.pull_request.labels.*.name, 'changes:brainai-frontend') &&
+      contains(github.event.pull_request.labels.*.name, 'changes:packages/create-brain-app') &&
       contains(github.event.pull_request.labels.*.name, 'CI-Release')
 
     runs-on: ubuntu-latest
@@ -97,7 +99,7 @@ jobs:
         run: pnpm build
 
       - name: Create tag and publish
-        run: npm run release:create-brain-app
+        run: npm run release:packages/create-brain-app
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN}}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN}}

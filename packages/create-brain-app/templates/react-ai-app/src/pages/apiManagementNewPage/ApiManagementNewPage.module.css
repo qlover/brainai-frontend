@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 64px);
+  background-color: #f5f5f5;
+}
+
+.leftPanel {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e8e8e8;
+  background-color: white;
+}
+
+.rightPanel {
+  flex: 1;
+  background-color: #fff;
+}
+
+.tabContainer {
+  padding: 16px;
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
+}
+
+.radioGroup {
+  width: 100%;
+  display: flex !important;
+}
+
+.radioButton {
+  flex: 1;
+  text-align: center !important;
+  height: 36px !important;
+  line-height: 34px !important;
+  transition: all 0.3s ease;
+}
+
+.radioButton:hover {
+  color: #1890ff;
+  background-color: #e6f7ff;
+}
+
+:global(.ant-radio-button-wrapper-checked).radioButton {
+  background: #1890ff !important;
+  border-color: #1890ff !important;
+  color: white !important;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+
+.emptyState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #999;
+  font-size: 14px;
+}

@@ -2,7 +2,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import terser from '@rollup/plugin-terser';
-import dts from 'rollup-plugin-dts';
 import typescript from 'rollup-plugin-typescript2';
 import { builtinModules } from 'module';
 import { readFileSync, rmSync } from 'fs';
@@ -21,7 +20,6 @@ const treeshake = {
 const defaultExternal = [
   ...builtinModules,
   ...builtinModules.map((mod) => `node:${mod}`),
-  ...Object.keys(pkg.dependencies || {}),
   ...Object.keys(pkg.devDependencies || {})
 ];
 
@@ -49,7 +47,7 @@ function cleanBuildDir() {
 
 cleanBuildDir();
 
-const formats = ['cjs', 'es'];
+const formats = ['es'];
 
 /**
  * @type {import('rollup').RollupOptions[]}
@@ -59,20 +57,10 @@ const config = [
     input: 'src/index.ts',
     external: defaultExternal,
     output: formats.map((format) => ({
-      file: `dist/${format}/index.js`,
+      file: `dist/index.js`,
       format
     })),
     plugins: createPlugin(isProduction),
-    treeshake
-  },
-  {
-    input: './src/index.ts',
-    external: defaultExternal,
-    output: formats.map((format) => ({
-      file: `dist/${format}/index.d.ts`,
-      format
-    })),
-    plugins: [dts()],
     treeshake
   }
 ];
