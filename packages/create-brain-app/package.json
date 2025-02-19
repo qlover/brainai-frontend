@@ -26,8 +26,8 @@
     "directory": ""
   },
   "files": [
-    "bin",
     "dist",
+    "templates",
     "package.json",
     "README.md"
   ],
@@ -38,7 +38,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "bin": {},
+  "bin": {
+    "create-brain-app": "./dist/index.js"
+  },
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint .",
@@ -48,19 +50,18 @@
   "devDependencies": {
     "@qlover/env-loader": "latest",
     "@qlover/fe-standard": "latest",
-    "@qlover/scripts-context": "latest",
     "@release-it/conventional-changelog": "^8.0.1",
     "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "^22.13.2",
-    "commander": "^11.0.0",
     "release-it": "^17.10.0",
     "rollup-plugin-dts": "^6.1.1",
-    "rollup-plugin-typescript2": "^0.36.0"
-  },
-  "dependencies": {
-    "@qlover/fe-utils": "latest"
+    "rollup-plugin-typescript2": "^0.36.0",
+    "commander": "^13.1.0",
+    "ignore": "^7.0.3",
+    "inquirer": "^12.3.2",
+    "ora": "^8.1.1"
   }
 }
