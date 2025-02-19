@@ -48,8 +48,9 @@
     "check-packages": "fe-check-packages",
     "commit": "fe-commit",
     "clean-branch": "fe-clean-branch",
-    "release:brainai-frontend": "release-it",
-    "clean:build": "fe-clean -f packages/*/dist -r"
+    "clean:build": "fe-clean -f packages/*/dist -r",
+    "release:create-brain-app": "fe-release -p ./packages/create-brain-app -V -P",
+    "release-pr:create-brain-app": "fe-release -p ./packages/create-brain-app -V"
   },
   "devDependencies": {
     "@qlover/env-loader": "latest",
