@@ -18,7 +18,7 @@ const allowedGlobals = {
 
 export default [
   {
-    ignores: ['dist', 'node_modules']
+    ignores: ['**/*/dist', 'node_modules', 'packages/create-brain-app/templates']
   },
   {
     files: ['packages/**/*.{js,jsx,ts,tsx}'],

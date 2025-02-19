@@ -1,0 +1,38 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background: #1a1a1a;
+  color: white;
+}
+
+.notFound h1 {
+  font-size: 120px;
+  margin: 0;
+  color: #ff9800;
+}
+
+.notFound p {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.backButton {
+  color: #4caf50;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 1px solid #4caf50;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background: transparent;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  background: #4caf50;
+  color: white;
+}

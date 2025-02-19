@@ -1,66 +1,54 @@
 {
-  "name": "@brain/create-brain-app",
-  "description": "A node lib template",
+  "name": "create-brain-app",
+  "description": "A create-app tool for brainai",
   "version": "0.0.0",
   "type": "module",
   "private": true,
-  "homepage": "",
+  "homepage": "https://github.com/qlover/brainai-frontend#readme",
   "author": "qlover",
   "license": "ISC",
-  "main": "./dist/es/index.js",
-  "module": "./dist/es/index.js",
-  "types": "./dist/es/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/es/index.d.ts",
-      "import": "./dist/es/index.js",
-      "require": "./dist/cjs/index.js"
-    },
-    "./cjs/*": "./dist/cjs/*",
-    "./es/*": "./dist/es/*",
-    "./package.json": "./package.json"
-  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qlover/fe-base.git",
-    "directory": ""
+    "url": "git+https://github.com/qlover/brainai-frontend.git",
+    "directory": "packages/create-brain-app"
   },
   "files": [
-    "bin",
     "dist",
+    "templates",
     "package.json",
     "README.md"
   ],
   "keywords": [
-    "lib",
-    "node lib"
+    "create-app",
+    "brainai",
+    "create-brain-app"
   ],
   "publishConfig": {
     "access": "public"
   },
-  "bin": {},
+  "bin": {
+    "create-brain-app": "./dist/index.js"
+  },
   "scripts": {
     "build": "rollup -c",
-    "lint": "eslint .",
-    "test": "vitest run",
-    "run:command": "node bin/test.js"
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@qlover/env-loader": "latest",
-    "@qlover/fe-standard": "latest",
-    "@qlover/scripts-context": "latest",
     "@release-it/conventional-changelog": "^8.0.1",
     "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "^22.13.2",
-    "commander": "^11.0.0",
     "release-it": "^17.10.0",
     "rollup-plugin-dts": "^6.1.1",
-    "rollup-plugin-typescript2": "^0.36.0"
-  },
-  "dependencies": {
-    "@qlover/fe-utils": "latest"
+    "rollup-plugin-typescript2": "^0.36.0",
+    "commander": "^13.1.0",
+    "ignore": "^7.0.3",
+    "inquirer": "^12.3.2",
+    "ora": "^8.1.1"
   }
 }

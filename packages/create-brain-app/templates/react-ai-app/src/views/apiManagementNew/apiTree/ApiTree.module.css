@@ -1,0 +1,130 @@
+.container {
+  height: calc(100% - 68px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px;
+  :global(.ant-spin-container) {
+    overflow: auto;
+    height: 100%;
+  }
+  :global(.ant-spin-nested-loading) {
+    height: calc(100% - 40px);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px;
+}
+
+.searchBox {
+  flex: 1;
+}
+
+.treeNode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+}
+
+.nodeTitle {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nodeActions {
+  display: flex;
+  visibility: hidden;
+  margin-left: 10px;
+}
+
+.treeNode:hover .nodeActions {
+  visibility: visible;
+}
+
+.actionBtn {
+  padding: 0 4px;
+  height: 24px;
+  line-height: 24px;
+}
+
+.actionBtn:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.addFileBtn {
+  visibility: hidden;
+}
+
+.treeNode:hover .addFileBtn {
+  visibility: visible;
+}
+
+/* 覆盖 antd Tree 组件的默认样式 */
+:global(.ant-tree) {
+  width: 100%;
+}
+
+:global(.ant-tree .ant-tree-treenode) {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+}
+
+:global(.ant-tree .ant-tree-node-content-wrapper) {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-height: 32px;
+}
+
+:global(.ant-tree .ant-tree-title) {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+:global(.ant-tree .ant-tree-switcher) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  line-height: 32px;
+  cursor: pointer;
+}
+
+:global(.ant-tree .ant-tree-node-content-wrapper:hover) {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+:global(.ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected) {
+  background-color: #e6f4ff;
+}
+
+:global(.ant-tree-list-holder-inner) {
+  padding: 4px;
+}
+
+:global(.ant-tree-switcher .ant-tree-switcher-icon) {
+  vertical-align: 0;
+}
+
+:global(:where(.ant-tree).ant-tree .ant-tree-switcher:before) {
+  height: 100%;
+}
+
+.emptyState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  padding: 24px;
+}

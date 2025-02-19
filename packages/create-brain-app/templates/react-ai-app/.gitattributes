@@ -1,0 +1,3 @@
+# 所有文件换行符使用 lf(windows 换行符默认是 crlf)
+* text=auto
+* eol=lf

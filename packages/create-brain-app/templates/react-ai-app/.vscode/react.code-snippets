@@ -1,0 +1,80 @@
+{
+  "react-store": {
+    "prefix": "react-store",
+    "scope": "typescript",
+    "body": [
+      "import { GenUtil } from 'js-cutil/dist/base/cutil/GenUtil';",
+      "import {",
+      "  StoreInterface,",
+      "  StoreStateInterface",
+      "} from '@/base/port/StoreInterface';",
+      "",
+      "export class $1State implements StoreStateInterface {",
+      "  $3;",
+      "  ",
+      "  copyWith(state: {",
+      "    $4",
+      "  ",
+      "  }): $1State {",
+      "    return GenUtil.copyWith(new $1State(), this, state);",
+      "",
+      "  }",
+      "}",
+      "",
+      "/**",
+      " * @description $2",
+      " */",
+      "export class $1 extends StoreInterface<$1State> {",
+      "  constructor() {",
+      "    super(() => new $1State());",
+      "  }",
+      "}"
+    ],
+    "description": "创建一个 React Store"
+  },
+  "use-store": {
+    "prefix": "use-store",
+    "scope": "typescriptreact",
+    "body": "const $1State = useStore($1);",
+    "description": "使用一个 React Store"
+  },
+  "react-component": {
+    "prefix": "react-component",
+    "scope": "typescriptreact",
+    "body": [
+      "import clsx from 'clsx';",
+      "",
+      "export type $1Props = {",
+      "  $2",
+      "  className?: string;",
+      "}",
+      "",
+      "export function $1({ $2, className }: $1Props) {",
+      "  return <div data-testid=\"$1\" className={clsx('$3', className)}>$3</div>;",
+      "}"
+    ],
+    "description": "创建一个 React 组件"
+  },
+  "react-bloc": {
+    "prefix": "react-bloc",
+    "scope": "typescript",
+    "body": [
+      "import { signal } from '@preact/signals-react';",
+      "import { BlocInterface } from '@/base/port/BlocInterface';",
+      "",
+      "class State {",
+      "  count = signal(0);",
+      "}",
+      "",
+      "export class $1Bloc extends BlocInterface<State> {",
+      "  constructor() {",
+      "    super(new State());",
+      "  }",
+      "",
+      "  changeState(): void {}",
+      "}",
+      ""
+    ],
+    "description": "使用一个 React Bloc"
+  }
+}
