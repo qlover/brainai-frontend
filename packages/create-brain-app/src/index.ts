@@ -31,7 +31,7 @@ const PROMPTS = {
       name: 'projectName',
       message: 'Create Project Name?',
       validate: (value) => {
-        const invalidChars = /[<>:"/\\|?*\x00-\x1F]/;
+        const invalidChars = /[<>:"/\\|?*\x00-\x1F!@#$%^&*()+=\[\]{};':"\\|,.<>\/?~]/;
         if (invalidChars.test(value)) {
           return 'Name contains invalid characters for a directory';
         }
@@ -63,12 +63,12 @@ function getCommandArgs() {
       '-v, --version',
       'Output the current version of create-brain-app.'
     )
-    .option(
-      '-d, --dry-run',
-      'Do not touch or write anything, but show the commands'
-    )
-    .option('-V, --verbose', 'Show more information')
-    .option('-n, --name <name>', 'The name of the test')
+    // .option(
+    //   '-d, --dry-run',
+    //   'Do not touch or write anything, but show the commands'
+    // )
+    // .option('-V, --verbose', 'Show more information')
+    // .option('-n, --name <name>', 'The name of the test')
     .parse(process.argv);
 
   return program.opts();
@@ -102,7 +102,6 @@ function createContext(args: OptionValues): GeneratorContext {
  * @returns
  */
 async function actions(
-  context: GeneratorContext,
   prompts: GeneratorPrompt[]
 ): Promise<Record<string, unknown>> {
   try {
@@ -114,7 +113,6 @@ async function actions(
       // Prompt couldn't be rendered in the current environment
     }
 
-    context.logger.error(error);
     throw error;
   }
 }
@@ -139,22 +137,24 @@ async function main() {
   const args = getCommandArgs();
   const context = createContext(args);
 
-  const actionsResult = await actions(context, [
+  const actionsResult = await actions([
     PROMPTS.projectName(),
     PROMPTS.templateName(context.options.templates)
   ]);
 
   Object.assign(context.options, actionsResult);
 
-  console.log(context);
-
   // generate project
   await generateProject(context);
 }
 
 async function catchError(reason: { command?: string }) {
+  console.log();
   console.error('Create brain app failed.');
-  console.error(reason);
+  if (reason.command) {
+    console.error(reason.command);
+  }
+  console.log();
   process.exit(1);
 }
 

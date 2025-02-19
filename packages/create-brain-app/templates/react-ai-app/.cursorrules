@@ -1,0 +1,5 @@
+当创建一个 store 时，请按照项目根目录中 .vscode/react.code-snippets 中的 react-store 格式创建。
+
+当创建一个 bloc 时，请按照项目根目录中 .vscode/react.code-snippets 中的 react-bloc 格式创建。
+
+当创建一个 react 组件时，请按照项目根目录中 .vscode/react.code-snippets 中的 react-component 格式创建。

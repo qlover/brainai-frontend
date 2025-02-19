@@ -1,0 +1,138 @@
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: none;
+}
+
+.card :global(.ant-card-head) {
+  border-bottom: none;
+  padding: 16px 24px;
+  min-height: 56px;
+}
+
+.card :global(.ant-card-head-title) {
+  padding: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card :global(.ant-card-body) {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-weight: 500;
+  color: #666;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.actionButton:hover,
+.switch:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.actionGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  position: relative;
+}
+
+.actionGroup:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  height: 20px;
+  width: 1px;
+  background-color: #e8e8e8;
+}
+
+.switch {
+  min-width: 40px;
+}
+
+.description {
+  padding: 10px 24px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.description label,
+.contentWrapper label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.description :global(.ant-input) {
+  font-size: 14px;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.description :global(.ant-input[disabled]) {
+  background: transparent;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.contentWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 24px;
+  background: #fafafa;
+}
+
+.card .content {
+  flex: 1;
+  font-size: 14px;
+  border-radius: 6px;
+  background: #fff;
+  resize: none;
+}
+
+.content:global(.ant-input[disabled]) {
+  background: transparent;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+:global(.ant-spin-nested-loading),
+:global(.ant-spin-container) {
+  height: 100%;
+}
