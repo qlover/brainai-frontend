@@ -1,3 +1,9 @@
+## 0.1.2 (2025-02-20)
+
+### Refactor
+
+- open refactor commit ([d926a52](https://github.com/qlover/brainai-frontend/pull/8/commits/d926a528872b40a8b99793110470acb5d6e6c881))
+
 ## 0.1.1 (2025-02-20)
 
 ### Features
