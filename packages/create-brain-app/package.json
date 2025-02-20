@@ -1,7 +1,7 @@
 {
   "name": "create-brain-app",
   "description": "A create-app tool for brainai",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "private": false,
   "homepage": "https://github.com/qlover/brainai-frontend#readme",
