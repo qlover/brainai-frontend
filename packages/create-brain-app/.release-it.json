@@ -3,6 +3,7 @@
     "requireUpstream": true,
     "commit": true,
     "commitMessage": "chore(tag): create-brain-app v${version}",
+    "commitArgs": ["--no-verify"],
     "tag": true,
     "tagName": "create-brain-app-v${version}",
     "tagMatch": "create-brain-app-v*",
