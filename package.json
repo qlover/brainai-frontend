@@ -1,6 +1,6 @@
 {
   "name": "brainai-monorepo",
-  "description": "A tools for brainai",
+  "description": "A private monorepo for managing brainai's frontend projects",
   "version": "0.0.0",
   "type": "module",
   "private": true,
@@ -44,8 +44,10 @@
     "test": "pnpm -r run test",
     "prettier": "prettier --ignore-path .prettierignore **/*.{js,ts,json,cjs,mjs} --write",
     "lint": "eslint . --fix",
+    "lint:staged": "lint-staged",
     "clean": "fe-clean",
     "check-packages": "fe-check-packages",
+    "prepare": "husky",
     "commit": "fe-commit",
     "clean-branch": "fe-clean-branch",
     "clean:build": "fe-clean -f packages/*/dist -r",
@@ -55,6 +57,8 @@
     "dryrun:release-pr:create-brain-app": "fe-release -p ./packages/create-brain-app -V -P --dry-run"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
     "@qlover/env-loader": "latest",
     "@qlover/eslint-plugin-fe-dev": "^0.2.0",
     "@qlover/fe-scripts": "latest",
@@ -78,6 +82,7 @@
     "globals": "^15.12.0",
     "husky": "^9.1.7",
     "jsdom": "^26.0.0",
+    "lint-staged": "^15.0.0",
     "prettier": "^3.5.0",
     "rollup": "^4.24.2",
     "rollup-plugin-delete": "^2.1.0",
