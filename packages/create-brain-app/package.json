@@ -3,7 +3,7 @@
   "description": "A create-app tool for brainai",
   "version": "0.0.0",
   "type": "module",
-  "private": true,
+  "private": false,
   "homepage": "https://github.com/qlover/brainai-frontend#readme",
   "author": "qlover",
   "license": "ISC",
@@ -23,7 +23,8 @@
   "keywords": [
     "create-app",
     "brainai",
-    "create-brain-app"
+    "create-brain-app",
+    "create-brain-app-cli"
   ],
   "publishConfig": {
     "access": "public"
