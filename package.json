@@ -49,8 +49,10 @@
     "commit": "fe-commit",
     "clean-branch": "fe-clean-branch",
     "clean:build": "fe-clean -f packages/*/dist -r",
-    "release:create-brain-app": "fe-release -p ./packages/create-brain-app -V -P",
-    "release-pr:create-brain-app": "fe-release -p ./packages/create-brain-app -V"
+    "release:create-brain-app": "fe-release -p ./packages/create-brain-app -V",
+    "release-pr:create-brain-app": "fe-release -p ./packages/create-brain-app -V -P",
+    "dryrun:release:create-brain-app": "fe-release -p ./packages/create-brain-app -V --dry-run",
+    "dryrun:release-pr:create-brain-app": "fe-release -p ./packages/create-brain-app -V -P --dry-run"
   },
   "devDependencies": {
     "@qlover/env-loader": "latest",
@@ -58,6 +60,7 @@
     "@qlover/fe-scripts": "latest",
     "@qlover/fe-standard": "latest",
     "@qlover/fe-utils": "latest",
+    "@qlover/fe-release": "latest",
     "@qlover/scripts-context": "latest",
     "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-json": "^6.1.0",

@@ -52,7 +52,7 @@ jobs:
         run: pnpm build
 
       - name: Create release PR
-        run: npm run release-pr:packages/create-brain-app
+        run: npm run release-pr:create-brain-app -V
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN}}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN}}
@@ -99,7 +99,7 @@ jobs:
         run: pnpm build
 
       - name: Create tag and publish
-        run: npm run release:packages/create-brain-app
+        run: npm run release:create-brain-app -V
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN}}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN}}
